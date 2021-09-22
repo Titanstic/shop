@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+header .menu-bar {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .menu-bar img {
+    width: 30px;
+}
+
+header .menu-bar a {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.container {
+    display: flex;
+}
+
+.product-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.order-container {
+    width: 30%;
+}
+
+.product-container h1,
+.order-container h1 {
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+}
+
+.product-container h1::after {
+    content: " ";
+    display: block;
+    width: 330px;
+    height: 3px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    background-color: black;
+}
+
+.product-container h1~p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 20px 10px;
+}
+
+.mencloth-container {
+    width: 95%;
+    height: 210px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 10px;
+}
+
+.mencloth-container .card {
+    width: 150px;
+    height: 200px;
+    box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.5);
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.mencloth-container .card:hover {
+    transform: scale(1.1);
+}
+
+.mencloth-container .card .cost {
+    text-shadow: 0px 3px 5px red;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.mencloth-container .card img {
+    width: 100%;
+}
+
+.mencloth-container .card p {
+    text-transform: uppercase;
+}
+
+.order-container {
+    height: 100vh;
+    /* border-left: 2px solid black; */
+    display: none;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.order-box {
+    width: 100%;
+    height: 60%;
+    border-top: 3px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    /* display: none; */
+}
+
+.order {
+    width: 95%;
+    height: 65px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.order .discount {
+    width: 70px;
+    height: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    transform: rotate(-40deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: -15px;
+}
+
+.order .img-box {
+    width: 60px;
+    height: 60px;
+}
+
+.order .img-box img {
+    width: 100%;
+}
+
+.order p {
+    width: 130px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.order p span {
+    display: block;
+}
+
+.order input {
+    width: 50px;
+    height: 50px;
+    outline: 0;
+}
+
+.order .eachprize {
+    display: none;
+}
+
+.list-container {
+    border-top: 3px solid black;
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    margin-top: 30px;
+    display: none;
+}
+
+.address-cotainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    display: none;
+}
+
+.bio {
+    width: 100%;
+}
+
+.bio label {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.information>* {
+    width: 100%;
+    border-radius: 5px;
+    margin: 1px 0 0 0;
+    padding: 3px 3px;
+    outline: 0;
+}
+
+.total {
+    width: 100%;
+    border-top: 3px solid black;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.total .total-name p,
+.total .total-prize p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.show-address {
+    display: none;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.confirm,
+.cancel {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    outline: 0;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.cancel {
+    display: none;
+}
+
+.confirm:active,
+.cancel:active {
+    padding: 14px 26px;
+}

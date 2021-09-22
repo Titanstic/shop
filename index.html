@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+    <!-- fav icon  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="./js/jquery3.6.0.js" type="text/javascript"></script>
+    <script src="./js/app.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <header>
+        <div class="menu-bar">
+            <img src=".//img/logo.jpg" alt="logo">
+            <a href="#">home</a>
+            <a href="#">products</a>
+            <a href="#">About us</a>
+            <a href="#">Contact</a>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+
+            <!-- Start Product Container  -->
+            <div class="product-container">
+                <h1>products line up</h1>
+                <p>Men</p>
+                <div class="mencloth-container">
+                    <div class="card">
+                        <p id="11" class="cost">6000</p>
+                        <img src="./img/men/shirt1.jpg" alt="shirt1" />
+                        <p class="cloth-name">Hoodies</p>
+                        <p class="cloth-id">M02394</p>
+                    </div>
+                    <div class="card">
+                        <p class="cost">4000</p>
+                        <img src="./img/men/shirt2.jpg" alt="shirt2" />
+                        <p class="cloth-name">Mancherster</p>
+                        <p class="cloth-id">M0034</p>
+                    </div>
+                    <div class="card">
+                        <p class="cost">5000</p>
+                        <img src="./img/men/shirt3.jpg" alt="shirt3" />
+                        <p class="cloth-name">Black shirt</p>
+                        <p class="cloth-id">M0299</p>
+                    </div>
+                    <div class="card">
+                        <p class="cost">2990</p>
+                        <img src="./img/men/shirt4.jpg" alt="shirt4" />
+                        <p class="cloth-name">Blue Shirt</p>
+                        <p class="cloth-id">M0534</p>
+                    </div>
+                    <div class="card">
+                        <p class="cost">3000</p>
+                        <img src="./img/men/shirt5.jpg" alt="shirt5" />
+                        <p class="cloth-name">White Shirt</p>
+                        <p class="cloth-id">M0204</p>
+                    </div>
+
+                </div>
+                <p>Woman</p>
+                <div class="mencloth-container">
+                    <div class="card">
+                        <p class="cost">4500</p>
+                        <img src="./img/woman/shirt1.jpg" alt="shirt1" />
+                        <p class="cloth-name">White Addidas</p>
+                        <p class="cloth-id">W0234</p>
+                    </div>
+                    <div class="card">
+                        <p class="cost">4000</p>
+                        <img src="./img/woman/shirt2.jpg" alt="shirt2" />
+                        <p class="cloth-name">Pupple Addidas</p>
+                        <p class="cloth-id">W0034</p>
+                    </div>
+                    <div class="card">
+                        <p class="cost">3990</p>
+                        <img src="./img/woman/shirt3.jpg" alt="shirt3" />
+                        <p class="cloth-name">MidNight Shirt</p>
+                        <p class="cloth-id">W0299</p>
+                    </div>
+                    <div class="card">
+                        <p class="cost">1500</p>
+                        <img src="./img/woman/shirt4.jpg" alt="shirt4" />
+                        <p class="cloth-name">Silver shirt</p>
+                        <p class="cloth-id">W0534</p>
+                    </div>
+                    <div class="card">
+                        <p class="cost">6500</p>
+                        <img src="./img/woman/shirt5.jpg" alt="shirt5" />
+                        <p class="cloth-name">Skyblue shirt</p>
+                        <p class="cloth-id">W0134</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Product Container  -->
+
+            <!-- Start Order Container  -->
+            <div class="order-container">
+                <h1>your cart</h1>
+
+                <!-- start obrder-box  -->
+                <div class="order-box">
+                    <!-- <div class="order">
+                        <div class="discount">15%</div>
+                        <div class="img-box">
+                            <img src="./img/men/shirt1.jpg" alt="shirt1">
+                        </div>
+                        <p>
+                            Pupple addidas<span>(WD0234)</span>
+                        </p>
+                        <input type="number" class="number" id="number" />
+                        <p class="eachprize"></p>
+                    </div> -->
+                </div>
+                <!-- end obrder-box  -->
+
+                <!-- start list-container  -->
+                <div class="list-container">
+                    <div class="shirt-name">
+                        <p>White shirt</p>
+                    </div>
+                    <div class="shirt-cost">
+                        <p>1000</p>
+                    </div>
+                </div>
+                <!-- end list-container  -->
+
+                <!-- start address-container  -->
+                <div class="address-cotainer">
+                    <div class="bio">
+                        <label for="name">Your Name</label>
+                        <label for="phnumber">Phone Number</label>
+                        <label for="address">Address </label>
+                    </div>
+                    <div class="information">
+                        <input type="text" id="name" class="name" />
+                        <input type="number" name="phnumber" id="phnumber" />
+                        <input type="text" name="address" id="address" />
+                        <select name="deliverycosts" id="deliverycost">
+                            <option selected disabled>Choose Location</option>
+                            <option value="3000">Yangon(+3000 Ks)</option>
+                            <option value="6000">Mandalay(+6000 Ks)</option>
+                            <option value="10000">International(+10000 Ks)</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- end address-container  -->
+
+                <!-- start total  -->
+                <div class="total">
+                    <div class="total-name">
+                        <p>Total</p>
+                        <p>Discount</p>
+                        <p>Grand Total</p>
+                    </div>
+                    <div class="total-prize">
+                        <p id="prize">0</p>
+                        <p class="discount">15%</p>
+                        <p></p>
+                    </div>
+                </div>
+                <!-- end total  -->
+
+                <div class="show-address">
+                    <h2>Thank you for your order</h2>
+                    <p>You Name is
+                        <span class="cusname">
+                            </span>
+                    </p>
+                    <p>Your Ph-number is <span class="cusphnum"></span></p>
+                    <p>Your address is <span class="cusadd"></span></p>
+                </div>
+                <div class="btn-group">
+                    <button class="cancel">Cancel</button>
+                    <button class="confirm">Confirm</button>
+                </div>
+            </div>
+            <!-- End Product Container  -->
+
+        </div>
+    </section>
+    <section>
+
+    </section>
+</body>
+
+</html>
