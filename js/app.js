@@ -21,7 +21,6 @@ let weeked = false;
 
 $(document).ready(function() {
     initial();
-
     // each card action 
     $(".card").click(function() {
         // console.log(cards.childNodes[count]);
@@ -42,6 +41,7 @@ $(document).ready(function() {
         // if same cloth id have,work this function
         let order = $(".order");
         for (let index = 0; index < order.length; index++) {
+            console.log(order[index].childNodes);
             let exit = order[index].childNodes[2].childNodes[1].innerText;
             if (exit === clothid) {
                 alreadyExits = true;
@@ -53,7 +53,11 @@ $(document).ready(function() {
         // check same item and add  order data
         if (alreadyExits === false) {
             currentPrice.push(Number(cost));
-            $(".order-box").append(`<div class='order'><div class='img-box'><img src='${img}' alt='${alt}'></div> <p class='name'>${clothname}<span class='id'>${clothid}</span></p><input type='text' class='number' value="1"/>  <ion-icon name="trash-outline" id="${count}" class="icon"></ion-icon> <p class="eachprize">${cost}</p></div>`);
+            if (weeked) {
+                $(".order-box").append(`<div class='order'><div class='img-box'><img src='${img}' alt='${alt}'></div> <p class='name'>${clothname}<span class='id'>${clothid}</span></p><input type='text' class='number' value="1"/>  <ion-icon name="trash-outline" id="${count}" class="icon"></ion-icon> <p class="eachprize">${cost}</p><div class="discount">15%</div></div>`);
+            } else {
+                $(".order-box").append(`<div class='order'><div class='img-box'><img src='${img}' alt='${alt}'></div> <p class='name'>${clothname}<span class='id'>${clothid}</span></p><input type='text' class='number' value="1"/>  <ion-icon name="trash-outline" id="${count}" class="icon"></ion-icon> <p class="eachprize">${cost}</p></div>`);
+            }
             count++;
             calPrice();
         };
@@ -68,6 +72,12 @@ $(document).ready(function() {
     $(document).on("click", ".icon", function() {
         currentPrice[this.id] = 0;
         $(this).closest(".order").remove();
+        if ($(".order").length == 0) {
+            currentPrice = [];
+            currentvalue = [];
+            finalPrice = [];
+            count = 0;
+        }
         calPrice();
     });
 
@@ -100,13 +110,16 @@ $(document).ready(function() {
             $(".order-container").hide(500);
             $(".cancel ").css("display", "none");
             $(".confirm").text("Confirm");
+            currentPrice = [];
+            currentvalue = [];
+            finalPrice = [];
             alert("your order is completed");
         }
 
         $(document).on("change", "#deliverycost", function() {
             calPrice();
             let delivercost = Number($("#deliverycost").val());
-            delivercost += fPrice;
+            delivercost += gPrice;
             $(".total-prize p:last-of-type").text(delivercost);
         });
     });
@@ -137,16 +150,13 @@ initial = () => {
 
 //  to give discount,check time 
 function checkWeeked() {
-    if (time.getDay() == 3 || time.getDay() == 6) {
-        if (Number(time.getHours()) >= 9 && Number(time.getHours()) <= 17) {
+    if (time.getDay() == 0 || time.getDay() == 6) {
+        if (Number(time.getHours()) >= 9 && Number(time.getHours()) <= 19) {
             weeked = true;
             $(".total-name p:nth-of-type(2)").css({ "display": "flex", "color": "red" });
             $(".total-name p:first-of-type").css("display", "flex");
             $(".total-prize p:nth-of-type(2)").css({ "display": "flex", "color": "red" });
             $(".total-prize p:first-of-type").css("display", "flex");
-            // for (let index = 0; index < orderjs.length; index++) {
-            //     $(".order")[index].append(`<div class="discount">15%</div>`);
-            // };
         }
 
     }
@@ -160,6 +170,7 @@ calPrice = () => {
     for (let index = 0; index < orderjs.length; index++) {
         currentvalue[index] = Number(orderjs[index].childNodes[3].value);
     }
+    console.log(currentPrice, currentvalue, finalPrice);
     // order price * order value add array 
     for (let index = 0; index < currentPrice.length; index++) {
         finalPrice[index] = currentPrice[index] * currentvalue[index];
@@ -169,9 +180,10 @@ calPrice = () => {
     }
     if (weeked) {
         $(".total-prize p:first-of-type").text(fPrice);
-        gPrice = fPrice - (fPrice * 0.15);
+        gPrice = parseInt(fPrice - (fPrice * 0.15));
         $(".total-prize p:last-of-type").text(gPrice);
     } else {
+        gPrice = fPrice;
         $(".total-prize p:last-of-type").text(fPrice);
     }
 }
